@@ -51,20 +51,25 @@ class GossipsController < ApplicationController
         format.json  { head :no_content }
       else
         format.html  { render :action => "edit" }
-        format.json  { render :json => @post.errors,
+        format.json  { render :json => @gossip.errors,
                       :status => :unprocessable_entity }
       end
     end
   end
 
-  def del
-    puts "Hello #destroy"
+  def destroy
+    puts "Hello #destroy #{params[:id]}"
     @gossip = Gossip.find(params[:id])
-    @gossip.destroy
-   
+    
     respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
+      if @gossip.destroy
+        format.html  { redirect_to(@gossip,
+                      :notice => 'Post was successfully deleted.') }
+        format.json  { head :no_content }
+      else
+        redirect_to gossips_path
+      end
+    
     end
   end
 

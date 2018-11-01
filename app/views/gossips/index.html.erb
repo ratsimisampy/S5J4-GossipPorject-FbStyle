@@ -1,12 +1,8 @@
 <%= render "/layouts/header" %>
 
 <div class="center jumbotron">
-  <h1>Index Gossips !</h1>
-  <h3>
-    Ici, tu as la liste des GOSSIPS 🎓
-  </h3>
+  <h1> Gossips !</h1>
 
-  <a href="/new"><button type="submit" class="btn btn-sm btn-primary">Post my gossip</button></a>
   <table class="table mt-5">
     <thead>
       <tr>
@@ -26,8 +22,5 @@
       </tr>
   <% end %>
 
-
-  <%= link_to "Cree un nouveau Gossip!", 'gossips/new', class: "btn btn-lg btn-primary" %>
-
-  <a href="<%= new_gossip_path  %>" class= "btn btn-lg btn-primary" > Creer un Gossip </a>
+  <a href="<%= new_gossip_path  %>" class= "btn btn-lg btn-primary" > Create new Gossip </a>
 </div>
