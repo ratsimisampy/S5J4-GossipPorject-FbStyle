@@ -1,24 +1,22 @@
-# README
+# Gossip project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Heroku's link : https://gossip-fb-style.herokuapp.com/
 
-Things you may want to cover:
+## How to
 
-* Ruby version
+## Features
 
-* System dependencies
+* List all gossips
+* Create new gossip
+* Show gossip
+* Update gossip
+* actually fails to destroy yet
 
-* Configuration
+## Improvements
 
-* Database creation
+* ... 
 
-* Database initialization
+## Contributors
 
-* How to run the test suite
+@Rado
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
