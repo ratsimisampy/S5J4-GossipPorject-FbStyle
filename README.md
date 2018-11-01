@@ -14,9 +14,9 @@
 
 ## Improvements
 
-* ... 
+* ... Facebook style ... for many reasons I assume my delay for this project, but still working on ...
 
 ## Contributors
 
-@Rado
+@Rado helped by the team
 
