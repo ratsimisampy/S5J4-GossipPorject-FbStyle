@@ -1,0 +1,33 @@
+<%= render "/layouts/header" %>
+
+<div class="center jumbotron">
+  <h1>Index Gossips !</h1>
+  <h3>
+    Ici, tu as la liste des GOSSIPS 🎓
+  </h3>
+
+  <a href="/new"><button type="submit" class="btn btn-sm btn-primary">Post my gossip</button></a>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Author</th>
+        <th>Content</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+  <tbody>
+  <% Gossip.all.each do |gossip| %>
+      <tr>
+        <th><%= gossip.id %></th>
+        <td><%= gossip.anonymous_gossiper %></td>
+        <td><%= gossip.content %></td>
+        <td><%= link_to 'Voir', gossip_path(gossip.id) %></td>
+      </tr>
+  <% end %>
+
+
+  <%= link_to "Cree un nouveau Gossip!", 'gossips/new', class: "btn btn-lg btn-primary" %>
+
+  <a href="<%= new_gossip_path  %>" class= "btn btn-lg btn-primary" > Creer un Gossip </a>
+</div>

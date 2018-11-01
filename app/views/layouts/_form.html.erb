@@ -1,0 +1,26 @@
+<%= form_for(@gossip) do |f| %>
+    <% if @gossip.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@gossip.errors.count, "error") %> prohibited
+          this post from being saved:</h2>
+      <ul>
+      <% @gossip.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+   
+    <div class="field">
+      <%= f.label :anonymous_gossiper %><br />
+      <%= f.text_field :anonymous_gossiper %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

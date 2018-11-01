@@ -1,0 +1,23 @@
+<%= render "/layouts/header" %>
+
+<div class="center jumbotron">
+    
+    
+    <p>
+    <b>Author:</b>
+    <%= @gossip.anonymous_gossiper %>
+    </p>
+    
+    <p>
+    <b>Content:</b>
+    <%= @gossip.content %>
+    </p>
+
+    <p>
+    <b>Creation date:</b>
+    <%= @gossip.created_at %>
+    </p>
+    <%= link_to 'Edit', edit_gossip_path(@gossip) %> 
+    <%= link_to 'Back', gossips_path %>
+    <%= link_to "Delete this gossip", @gossip, method: :del, class: "btn btn-sm btn-danger" %>
+</div>

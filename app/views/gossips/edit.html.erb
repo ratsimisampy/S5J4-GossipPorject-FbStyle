@@ -1,0 +1,10 @@
+<%= render "/layouts/header" %>
+
+<div class="center jumbotron">
+    <h1>Editing gossip <%= @id %></h1>
+    <%= render "/layouts/form" %>
+
+ 
+<%= link_to 'Show', @gossip %> |
+<%= link_to 'Back', gossips_path %>
+<%= link_to "Delete this gossip", @gossip, method: :del, class: "btn btn-sm btn-danger" %>
