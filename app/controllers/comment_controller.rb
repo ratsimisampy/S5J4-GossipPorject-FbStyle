@@ -4,18 +4,18 @@ class CommentController < ApplicationController
         @comment = Comment.new
         puts "Hello comment#New"
         
-        end
-      end
+        
+    end
     
-      def create
+    def create
         puts "Coucou comment#Create" 
         @gossip = Gossip.find(params[:id])
         @comment = @gossip.comments.create(comment_params)
         redirect_to gossip_path(@gossip)
-      end
+    end
 
-      def comment_params
+    def comment_params
         params.require(:comment).permit(:anonymous_commentor , :content)
-      end
+    end
 
 end
