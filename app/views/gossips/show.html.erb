@@ -1,15 +1,14 @@
 <%= render "/layouts/header" %>
 
-<div class="center jumbotron">
-    
-    
+<div class="container mt-5 mb-5">
+
     <p>
     <b>Author:</b>
     <%= @gossip.anonymous_gossiper %>
     </p>
     
     <p>
-    <b>Content:</b>
+    <h5>Content:</h5>
     <%= @gossip.content %>
     </p>
 
@@ -17,7 +16,49 @@
     <b>Creation date:</b>
     <%= @gossip.created_at %>
     </p>
-    <%= link_to 'Edit', edit_gossip_path(@gossip) %> 
-    <%= link_to 'Back', gossips_path %>
+    <%= link_to 'Edit', edit_gossip_path(@gossip), class: "btn btn-sm btn-primary" %> 
+    <%= link_to 'Back', gossips_path, class: "btn btn-sm btn-primary" %>
+   
     <%= link_to "Delete this gossip", @gossip, method: :delete, class: "btn btn-sm btn-danger" %>
-</div>
+
+    <!-- Comment index -->
+    <div class="container mt-3"> <!-- Comments index -->
+        <hr>
+        <% @gossip.comments.each do |comment| %>
+            <div class="media">
+                <div class="media-body">
+                    <h5 class="mt-0"><%= comment.anonymous_commentor %></h5>
+                    <p><%= comment.content %></p>
+                    <p class="mb-0 float-right"><%= comment.created_at.strftime("%d %b %Y à %Hh%M") %></p>
+                    <a href="/comments/edit/<%= @id %>"><button type="button" class="btn btn-sm btn-light">Edit</button></a> 
+                </div>
+            </div>
+            <hr>
+        <% end %>
+
+    </div>
+
+    <!-- Comments form -->
+        <hr>
+        <h5 class="mb-5">Add a comment :</h5>
+        <div class="form-group col-md-6">
+                
+            <%= form_for([ @gossip, Comment.new ]) do |f| %>
+
+                <div class="form-group">
+                    <%= f.label :anonymous_commentor%>
+                    <%= f.text_field :anonymous_commentor, class: "form-control" %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :content  %>
+                    <%= f.text_area :content, class: "form-control" %>
+                </div>
+                
+                <%= f.submit 'Comment' , class: "btn btn-sm btn-primary" %>
+	 
+	        <% end %>
+        </div>
+    
+
+</div>      <!-- End of very 1st div-->

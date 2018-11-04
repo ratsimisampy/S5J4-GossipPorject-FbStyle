@@ -62,7 +62,7 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
     
     respond_to do |format|
-      if @gossip.destroy
+      if @gossip.delete
         format.html  { redirect_to(@gossip,
                       :notice => 'Post was successfully deleted.') }
         format.json  { head :no_content }
