@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: 'static#home'
+  root 'static#home'
 
   resources :gossips
   
