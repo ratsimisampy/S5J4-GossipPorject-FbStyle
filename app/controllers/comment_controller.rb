@@ -9,9 +9,9 @@ class CommentController < ApplicationController
     
     def create
         puts "Coucou comment#Create" 
-        @gossip = Gossip.find(params[:id])
+        @gossip = Gossip.find(params[:gossip_id])
         @comment = @gossip.comments.create(comment_params)
-        redirect_to gossip_path(@gossip)
+        redirect_to gossip_path(@gossip.id)
     end
 
     def comment_params

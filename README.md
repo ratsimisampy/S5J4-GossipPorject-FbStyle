@@ -1,6 +1,9 @@
 # Gossip project
 
-* Heroku's link : https://gossip-fb-style.herokuapp.com/
+* This is an exercice based on CRUD Model
+* allowing an anonymous user to CRUD his own gossip(s)
+
+* old Heroku's link : https://gossip-fb-style.herokuapp.com/
 
 ## How to
 
@@ -10,13 +13,12 @@
 * Create new gossip
 * Show gossip
 * Update gossip
-* actually fails to destroy yet
+* actually it fails to destroy yet
 
 ## Improvements
 
-* ... Facebook style ... for many reasons I assume my delay for this project, but still working on ...
-
-## Contributors
-
-@Rado helped by the team
+* Some improvments can be done, such as:
+    * CRUD comment
+    * the ability to like/dislike gossips
+    * the ability to like/dislike comments
 
